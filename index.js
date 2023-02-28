@@ -19,6 +19,8 @@ app.get('/', (req, res) => {
 })
 
 // Routing Config
+const userRouter = require('./src/routers/usersRouter');
+app.use('/user', userRouter);
 
 // Error Handling
 app.use((err, req, res, next) => {
