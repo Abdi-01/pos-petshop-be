@@ -7,5 +7,8 @@ const { checkUser } = require('../helper/validator');
 
 route.post('/login', usersController.login);
 route.get('/keep-login', readToken, usersController.keepLogin);
+route.post("/register", readToken, usersController.register);
+route.get("/getalluser", readToken, usersController.getAllUser);
+route.patch("/delete/:uu_id", readToken, usersController.deleteUser);
 
 module.exports = route;
