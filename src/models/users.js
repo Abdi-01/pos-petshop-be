@@ -21,13 +21,15 @@ module.exports = (sequelize, DataTypes) => {
     phone: DataTypes.STRING,
     password: DataTypes.STRING,
     address: DataTypes.STRING,
-    role_id: DataTypes.INTEGER
+    role_id: DataTypes.INTEGER,
+    isDeleted: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'users',
-  });
-  users.associate=(models)=>{
-    users.belongsTo(models.role,{foreignKey:"role_id"});
+  }); 
+
+  users.associate = (models) => {
+    users.belongsTo(models.role, {foreignKey: "role_id"})
   }
   return users;
 };

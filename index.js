@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 })
 
 // Routing Config
+
 const userRouter = require('./src/routers/usersRouter');
 app.use('/user', userRouter);
 const productRouter = require('./src/routers/productsRouter');
