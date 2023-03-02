@@ -20,8 +20,12 @@ app.get('/', (req, res) => {
 
 // Routing Config
 const userRouter = require("./src/routers/usersRouter");
+const transactionRouter = require("./src/routers/transactionsRouter");
+const productRouter = require("./src/routers/productsRouter");
 
 app.use("/user", userRouter);
+app.use("/transaction", transactionRouter);
+app.use("/product", productRouter);
 
 // Error Handling
 app.use((err, req, res, next) => {
