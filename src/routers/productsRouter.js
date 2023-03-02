@@ -1,8 +1,12 @@
-const express = require("express");
-const { productsController } = require("../controllers");
-const { readToken } = require("../helper/jwt");
+const express = require('express');
 const route = express.Router();
+const { productsController } = require('../controllers');
+const jwt = require('jsonwebtoken');
+const { readToken } = require('../helper/jwt');
 
-route.post("/", readToken, productsController.getAllProducts);
 
-module.exports = route
+
+route.get('/',productsController.allProducts );
+route.post("/list", readToken, productsController.list);
+
+module.exports = route;

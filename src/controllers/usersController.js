@@ -125,7 +125,6 @@ module.exports = {
             next(error)
         }
     },
-
     deleteUser: async (req, res, next) => {
         console.log(`ini req.params`, req.params);
         try {
@@ -146,5 +145,4 @@ module.exports = {
             next(error)
         }
     }
-
 }
