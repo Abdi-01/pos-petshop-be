@@ -19,5 +19,11 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'transaction',
   });
+
+  transaction.associate = (models) => {
+    transaction.hasMany(models.order, {foreignKey: "transaction_id"}),
+    transaction.belongsTo(models.users, {foreignKey: "user_id"})
+  }
+
   return transaction;
 };

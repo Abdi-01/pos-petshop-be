@@ -23,8 +23,8 @@ module.exports = {
 
                 bcrypt.compareSync(req.body.password, get[0].dataValues.password);
 
-                let { uu_id, username, email, role_id } = get[0].dataValues
-                let token = createToken({ uu_id, email });
+                let {id, uu_id, username, email, role_id } = get[0].dataValues
+                let token = createToken({id, uu_id, email });
                 return res.status(200).send({
                     success: true,
                     message: "login success",

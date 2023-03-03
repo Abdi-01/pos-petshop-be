@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "kevintanes",
-    "password": "Tan@141196",
+    "username": "",
+    "password": "",
     "database": "petshop_database",
     "host": "127.0.0.1",
     "dialect": "mysql"

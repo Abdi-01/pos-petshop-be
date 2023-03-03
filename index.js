@@ -24,6 +24,8 @@ const userRouter = require('./src/routers/usersRouter');
 app.use('/user', userRouter);
 const productRouter = require('./src/routers/productsRouter');
 app.use('/product', productRouter)
+const transactionRouter = require("./src/routers/transactionsRouter");
+app.use("/transaction", transactionRouter);
 
 // Error Handling
 app.use((err, req, res, next) => {
