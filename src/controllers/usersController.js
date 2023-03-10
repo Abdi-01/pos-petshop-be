@@ -23,8 +23,8 @@ module.exports = {
 
                 bcrypt.compareSync(req.body.password, get[0].dataValues.password);
 
-                let {id, uu_id, username, email, role_id } = get[0].dataValues
-                let token = createToken({id, uu_id, email });
+                let {uu_id, username, email, role_id } = get[0].dataValues
+                let token = createToken({uu_id, email });
                 return res.status(200).send({
                     success: true,
                     message: "login success",
@@ -55,8 +55,8 @@ module.exports = {
                 where: ({ uu_id: req.decript.uu_id })
             });
             // get [0].dataValues.role_id = get[0].dataValues.role_id.role_id;
-            let { uu_id, username, email, role_id } = get[0].dataValues;
-            let token = createToken({ uu_id, email });
+            let {uu_id, username, email, role_id } = get[0].dataValues;
+            let token = createToken({uu_id, email });
             return res.status(200).send({
                 success: true,
                 username: username,
@@ -125,6 +125,7 @@ module.exports = {
             next(error)
         }
     },
+    
     deleteUser: async (req, res, next) => {
         console.log(`ini req.params`, req.params);
         try {
